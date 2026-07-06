@@ -5,6 +5,7 @@ from logger import log_event, log_state
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from shot import Shot
 
 def main():
     # print("Hello from geoboot-asteroid!")
@@ -29,6 +30,10 @@ def main():
 
     AsteroidField.containers = (updatable)
     asteroidfield = AsteroidField()
+
+    # 4.3
+    shots = pygame.sprite.Group()
+    Shot.containers = (shots, updatable, drawable)
 
 
     while True:
